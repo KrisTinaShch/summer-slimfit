@@ -1,0 +1,214 @@
+.matcha-results_title h2.ks-heading-h2 {
+    font-size: 3.3rem;
+    text-align: center;
+    font-weight: 900;
+}
+
+.matcha-results_title h3.ks-heading-h3 {
+    font-size: 2.3rem;
+    margin-top: 0.5rem;
+    text-transform: initial;
+    text-align: center;
+    font-weight: 500;
+}
+
+.matcha-results_title p.ks-paragraph {
+    font-size: 2.3rem;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 900;
+    color: #fff;
+    background: var(--main-green);
+    width: fit-content;
+    padding: 0.7rem 1rem;
+    border-radius: 10px;
+    margin: 0.5rem auto;
+}
+
+.matcha-results .slick-slide {
+    margin: 0 10px;
+    width: 100%;
+}
+
+.matcha-results .sliders-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.matcha-results .before-after-container {
+    position: relative;
+    width: 100%;
+    min-height: 25rem;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.matcha-results .before-image,
+.matcha-results .after-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.matcha-results .before-image img.ks-image,
+.matcha-results .after-image img.ks-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.matcha-results .after-image {
+    clip-path: inset(0 50% 0 0);
+}
+
+.matcha-results .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+}
+
+
+.matcha-results {
+    position: relative;
+}
+
+.matcha-results .slider-handle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 3rem;
+    height: 3rem;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    pointer-events: none;
+    animation: pulse 2.5s infinite ease-in-out;
+}
+
+
+.matcha-results .slider-handle::before {
+    content: "⟷";
+}
+
+
+.matcha-results .before-after-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 3px;
+    background: white;
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+
+.matcha-results .before-after__slider-item {
+    margin-top: 2.5rem;
+}
+
+.matcha-results .before-after__slider-item .before-after__text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.matcha-results .before-after__slider-item .before-after__text p.ks-paragraph {
+    margin: 0;
+    font-weight: bold;
+}
+
+.matcha-results .before-after__slider-item .before-after__text small {
+    font-family: "Helen Regular", serif;
+    font-size: 0.8rem;
+}
+
+.matcha-results .slider-handle {
+    pointer-events: auto;
+    cursor: grab;
+}
+
+.matcha-results .slider-handle:active {
+    cursor: grabbing;
+}
+
+.matcha-results .slick-dots {
+    position: absolute;
+    bottom: -2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex !important;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.matcha-results .slick-dots li {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    background: transparent;
+    transition: background 0.3s, transform 0.3s;
+    cursor: pointer;
+}
+
+.matcha-results .slick-dots li.slick-active {
+    background: #111;
+    border-color: #111;
+}
+
+.matcha-results .slick-dots li button {
+    font-size: 0;
+    background: none;
+    border: none;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    padding: 0;
+}
+
+@media screen and (min-width:1024px) {
+
+    .ks-container {
+        max-width: 65%;
+        margin: 0 auto;
+    }
+
+    .matcha-results {
+        padding: 0rem 0 7rem 0;
+    }
+
+}
